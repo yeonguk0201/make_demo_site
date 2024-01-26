@@ -1,568 +1,605 @@
 :root {
-    --photomain-font-zise: 18px;
-    --photomiddle-font-size: 50px;
-    --photobottome-font-size: 16px;
-    --padding-side: 0 9rem 0 8rem;
+  --photomain-font-zise: 18px;
+  --photomiddle-font-size: 50px;
+  --photobottome-font-size: 16px;
+  --padding-side: 0 9rem 0 8rem;
 }
-*{
-    transition: 0.2s;
-    z-index: auto;
+* {
+  transition: 0.2s;
+  z-index: auto;
 }
 body {
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
 }
 html {
-    text-transform: uppercase;
-    max-width: fit-content;
-    font-family: 'Maven Pro', sans-serif;
+  text-transform: uppercase;
+  max-width: fit-content;
+  font-family: 'Maven Pro', sans-serif;
+  margin: 0 auto;
 }
 .main {
-    text-align: center;
+  text-align: center;
 }
 .infopic {
-    font-family: sans-serif;
-    font-style: oblique;
-    text-transform: none;
+  font-family: sans-serif;
+  font-style: oblique;
+  text-transform: none;
 }
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /* 햄버거 바 */
-#hambergerbar1, #hambergerbar2, #hambergerbar3 {
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    margin-bottom: 0.4rem;
-    border-radius: 0.1rem;
-    transition: all 0.3s;   /* hover에다 transition주지 말고 할거에다가 줘야지 땔때도 자연스럽게 됨 */
+#hambergerbar1,
+#hambergerbar2,
+#hambergerbar3 {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin-bottom: 0.4rem;
+  border-radius: 0.1rem;
+  transition: all 0.3s; /* hover에다 transition주지 말고 할거에다가 줘야지 땔때도 자연스럽게 됨 */
 }
 
 #hambergerbar3 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .hamburger {
-    cursor: pointer;
-    display: inline-block;
+  cursor: pointer;
+  display: inline-block;
 }
 #checkboxleft:checked + label div {
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    left: -4rem;
-    top: -0.5rem;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  left: -4rem;
+  top: -0.5rem;
 }
 #checkboxleft:checked + label div:nth-child(1) {
-    transform: rotate(45deg) translateX(0.2rem) translateY(0.6rem);
+  transform: rotate(45deg) translateX(0.2rem) translateY(0.6rem);
 }
 #checkboxleft:checked + label div:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 #checkboxleft:checked + label div:nth-child(3) {
-    transform: rotate(-45deg) translateX(0.2rem) translateY(-0.6rem);
+  transform: rotate(-45deg) translateX(0.2rem) translateY(-0.6rem);
 }
 #checkboxleft:checked + label {
-    z-index: 10;
+  z-index: 10;
 }
 #checkboxleft {
-    display: none;
+  display: none;
 }
 /* 사이드바 콘텐츠 설정 */
 .sidebar_content {
-    position: fixed;
-    top: 0;
-    left: -20rem;
-    width: 20rem;
-    height: 100%;
-    background-color: rgba(139, 139, 139, 0.938);
-    transition: all 0.35s;
-    z-index: 5;
+  position: fixed;
+  top: 0;
+  left: -20rem;
+  width: 20rem;
+  height: 100%;
+  background-color: rgba(139, 139, 139, 0.938);
+  transition: all 0.35s;
+  z-index: 5;
 }
 .sidebar_content > ul {
-    margin: 20px;
+  margin: 20px;
 }
 .sidebar_content > ul:nth-child(1) {
-    margin: 20px;
-    margin-top: 80px;
+  margin: 20px;
+  margin-top: 80px;
 }
 .sidebar_content > ul > li {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    list-style: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  list-style: none;
 }
 .sidebar_content > ul > a {
-    display: inline-block;
-    width: auto;
-    color: #fff;
-    padding: 10px;
-    margin: 10px;
-    background-color: #f5f5f5;
+  display: inline-block;
+  width: auto;
+  color: #fff;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f5f5f5;
 }
 .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.842);
-    transition: all 0.35s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.842);
+  transition: all 0.35s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
 }
 #checkboxleft:checked ~ .sidebar_content {
-    left: 0;
+  left: 0;
 }
 #checkboxleft:checked ~ .background {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* 헤더 편집 */
 header {
-/*     position: sticky;
+  /*     position: sticky;
     top: 0px; */
-    display: flex;
-    background-color: white;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 9rem 0 8rem;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 9rem 0 8rem;
 }
 
 h1 {
-    display: inline-block;
-    font-weight: bold;
+  display: inline-block;
+  font-weight: bold;
 }
 
 h1 a {
-    text-decoration: none;
-    color: black;
-    position: relative;
-    left: 6.5rem;
-    
+  text-decoration: none;
+  color: black;
+  position: relative;
+  left: 6.5rem;
 }
-
 
 form {
-    display: inline-block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 input {
-    border: none;
+  border: none;
 }
 
 form input:nth-child(2) {
-    display: none;
+  display: none;
 }
 form label {
-    padding: 1rem;
-    font-size: large;
+  padding: 1rem;
+  font-size: large;
 }
 /* input:focus {
     outline: none;      /* 이걸로 input 클릭됬을때 outline 없애기 (focus는 양식 입력같은 곳만 가능)
 */
 
 .photoline {
-    width: 4rem;
-    height: 0.2rem;
-    background-color: white;
-    display: inline-block;
+  width: 4rem;
+  height: 0.2rem;
+  background-color: white;
+  display: inline-block;
 }
 .line {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.lineline{
-    width: 3rem;
-    height: 0.2rem;
-    background-color: black;
-    position: relative;
-    top: -8px;
+.lineline {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: black;
+  position: relative;
+  top: -8px;
 }
-
 
 /* 네비바 */
 .head {
-    display: flex;
-    background-color: white;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2.5rem 9rem 2rem 8rem;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 9rem 2rem 8rem;
 }
 
 .head a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 /* 사진 위쪽 */
 .toptop {
-    display: grid;
-    grid-template-columns: repeat(4, 24rem);
-    grid-template-rows: repeat(2, 16rem);
-    gap: 2rem;
-    padding: var(--padding-side);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 16rem);
+  gap: 2rem;
+  padding: var(--padding-side);
 }
 
-.newsletter{
-    background: url(배경검은.jpg);
-    color: white;
-    width: 24rem;
-    height: 16rem;
+.newsletter {
+  background: url(배경검은.jpg);
+  color: white;
 }
 
 .nick {
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
-    background: url(닉우스터.jpg) no-repeat center/cover;  /* 이미지 대신 grid로 나눈 div 자체에 사진 */
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  background: url(닉우스터.jpg) no-repeat center/cover; /* 이미지 대신 grid로 나눈 div 자체에 사진 */
 }
 .nick .photoline {
-    width: 5rem;
+  width: 5rem;
 }
 
 .bmw {
-    background: url(bmwi8.jpg) no-repeat center/cover;
+  background: url(bmwi8.jpg) no-repeat center/cover;
 }
 
 .mediterrane {
-    grid-column: 3 / 5;
-    background: url(mediterranean.jpg) no-repeat center/cover;
+  grid-column: 3 / 5;
+  background: url(mediterranean.jpg) no-repeat center/cover;
 }
 
 /* 사진 위 아래 */
 .toplow {
-    display: grid;
-    grid-template-columns: repeat(4, 32.68rem);
-    grid-template-rows: repeat(1, 30rem);
-    gap: 2rem;
-    padding: var(--padding-side);
-    padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 30rem);
+  gap: 2rem;
+  padding: var(--padding-side);
+  padding-top: 2rem;
 }
+
 .knightbar {
-    background: url(knight\ bar.jpg) no-repeat center/cover;
+  background: url(knight\ bar.jpg) no-repeat center/cover;
 }
 
 .applewatch {
-    background: url(apple\ watch.jpg) no-repeat center/cover;
+  background: url(apple\ watch.jpg) no-repeat center/cover;
 }
 .berry {
-    background: url(berryblast.jpg) no-repeat center/cover;
+  background: url(berryblast.jpg) no-repeat center/cover;
 }
 
-.knightbar .photoline, .applewatch .photoline, .berry .photoline {
-    width: 4rem;
+.knightbar .photoline,
+.applewatch .photoline,
+.berry .photoline {
+  width: 4rem;
 }
 
 /* 글자 */
-.toptop a, .main a, .mainlow a, .fans, .follow {
-    color: white;
-    font-weight: 3px;
+.toptop a,
+.main a,
+.mainlow a,
+.fans,
+.follow {
+  color: white;
+  font-weight: 3px;
 }
 .facebookfans {
-    font-size: 1.3rem;
-    margin: 1.5rem;
-    margin: 0.7rem;
+  font-size: 1.3rem;
+  margin: 1.5rem;
+  margin: 0.7rem;
 }
 .facebookfollow {
-    font-size: 2rem;
-    margin: 0;
+  font-size: 2rem;
+  margin: 0;
 }
 /* 글자 정렬 */
-.nick, .knightbar, .applewatch, .berry, .bike, .glass, .interviews {     /* 아래 정렬 */
-    display: flex;
-    flex-direction: column;             /* 이걸로 주축 정하고 */
-    justify-content: flex-end;
-    align-items: center;
+.nick,
+.knightbar,
+.applewatch,
+.berry,
+.bike,
+.glass,
+.interviews {
+  /* 아래 정렬 */
+  display: flex;
+  flex-direction: column; /* 이걸로 주축 정하고 */
+  justify-content: flex-end;
+  align-items: center;
 }
-.bmw, .newsletter, .mediterrane, .follow, .fans, .johnwick, .nightcity {         /* 중간 정렬 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.bmw,
+.newsletter,
+.mediterrane,
+.follow,
+.fans,
+.johnwick,
+.nightcity {
+  /* 중간 정렬 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.nick .line{
-    width: 5rem;
-    height: 0.2rem;
-    background-color: white;
+.nick .line {
+  width: 5rem;
+  height: 0.2rem;
+  background-color: white;
 }
-.photoletter {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 2rem;
-    width: 35em;
-}
+/* .photoletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 35em;
+} */
 
 .photofonttop {
-    font-size: var(--photomain-font-zise);
-    letter-spacing: 7px;
-    font-weight: bold;
+  font-size: var(--photomain-font-zise);
+  letter-spacing: 7px;
+  font-weight: bold;
 }
 .fontmiddle {
-    font-size: var(--photomiddle-font-size);
-    margin: 0;
-    letter-spacing: 10px;
+  font-size: var(--photomiddle-font-size);
+  margin: 0;
+  letter-spacing: 10px;
 }
 .infopic {
-    font-size: var(--photobottome-font-size);
+  font-size: var(--photobottome-font-size);
 }
 .mediterrane .fontmiddle {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .newsletter .fontmiddle {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 .bike .fontmiddle {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 /* 중간 */
 .mainmiddle {
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 .mainmiddle img {
-    width: 20.6rem;
-    height: 15rem;
+  width: 20.6rem;
+  height: 15rem;
 }
-.mainmiddle > .slidelist > .slideitems > a [class*=middle] {
-    margin: 1rem;
-    overflow: hidden;
-    cursor: pointer;
+.mainmiddle > .slidelist > .slideitems > a [class*='middle'] {
+  margin: 1rem;
+  overflow: hidden;
+  cursor: pointer;
 }
-.left, .right {
-    cursor: pointer;
+.left,
+.right {
+  cursor: pointer;
 }
-
 
 .mainmiddle p:nth-of-type(1) {
-    letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
 }
 
-#image01, #image02, #image03, #image04 {
-    display: none;
+#image01,
+#image02,
+#image03,
+#image04 {
+  display: none;
 }
-
 
 /* input [id*="image"] {
     display: none;
 }
  */
 .mainmiddle > ul {
-    white-space: nowrap;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-start;
-    max-width: 91rem;
-    padding-left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 91rem;
+  padding-left: 0;
 }
 .mainmiddle > ul > li {
-    display: inline-block;
+  display: inline-block;
 }
 
-.left, .right {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    font-size: 100px;
-    color: white;
+.left,
+.right {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  font-size: 100px;
+  color: white;
 }
 .right {
-    position: absolute;
-    top: -0.8em;
-    left: 0.1em;
+  position: absolute;
+  top: -0.8em;
+  left: 0.1em;
 }
 .left {
-    position: absolute;
-    left: -15.8em;
-    top: -0.8em;
+  position: absolute;
+  left: -15.8em;
+  top: -0.8em;
 }
 
-.slide-control [class*=control] {
-    position: absolute;
-    cursor: pointer;
-    display: none;
+.slide-control [class*='control'] {
+  position: absolute;
+  cursor: pointer;
+  display: none;
 }
 .slideitems {
-    transition: .5s;
+  transition: 0.5s;
 }
 /* 아래 */
 
 .mainlow {
-    display: grid;
-    grid-template-columns: repeat(4, 24rem);
-    grid-template-rows: repeat(4, 16rem);
-    gap: 2rem;
-    padding: var(--padding-side);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 16rem);
+  gap: 2rem;
+  padding: var(--padding-side);
 }
 
 .bike {
-    background: url(bike.jpg) no-repeat center/cover;
-    grid-row: 1 / 3;
+  background: url(bike.jpg) no-repeat center/cover;
+  grid-row: 1 / 3;
 }
 .glass {
-    background: url(glass.jpg) no-repeat center/cover;
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
+  background: url(glass.jpg) no-repeat center/cover;
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
 }
-.glass .photoline, .interviews .photoline {
-    width: 6rem;
+.glass .photoline,
+.interviews .photoline {
+  width: 6rem;
 }
 .fans {
-    background: url(페북.jpg) no-repeat left/cover;
-
+  background: url(페북.jpg) no-repeat left/cover;
 }
 .follow {
-    background: url(트위터.jpg) no-repeat center/cover;
-
+  background: url(트위터.jpg) no-repeat center/cover;
 }
 .johnwick {
-    background: url(john\ wick.jpg) no-repeat top/cover;
-    grid-column: 1 / 3;
+  background: url(john\ wick.jpg) no-repeat top/cover;
+  grid-column: 1 / 3;
 }
 .nightcity {
-    background: url(night.jpg) no-repeat center/cover;
-    grid-column: 1 / 3;
+  background: url(night.jpg) no-repeat center/cover;
+  grid-column: 1 / 3;
 }
 .interviews {
-    background: url(emmawatson.jpg) no-repeat top/cover;
-    grid-column: 3 / 5;
-    grid-row: 3 / 5;
+  background: url(emmawatson.jpg) no-repeat top/cover;
+  grid-column: 3 / 5;
+  grid-row: 3 / 5;
 }
 
 /* 버튼 */
 button {
-    border: none;
-    padding: 1rem;
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  border-radius: 1rem;
 }
 
 .fans button {
-    color: rgb(32, 62, 135);
+  color: rgb(32, 62, 135);
 }
 .follow button {
-    color: rgb(0, 86, 148);
+  color: rgb(0, 86, 148);
 }
-
 
 /* 밑 */
 footer {
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--padding-side);
-    padding-top: 1.7rem;
-    padding-bottom: 1.7rem;
-    margin-top: 3rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-side);
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  margin-top: 3rem;
 }
 footer a {
-    color: white;
-    padding-left: 3rem;
-    padding-right: 3rem;
+  color: white;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 footer li {
-    list-style: none;
-    float: left;    /* li 왼쪽으로 가로 정렬 */
+  list-style: none;
+  float: left; /* li 왼쪽으로 가로 정렬 */
 }
-footer .logo, footer .by {
-    color: rgb(139, 139, 139);
-    font-weight: bold;
+footer .logo,
+footer .by {
+  color: rgb(139, 139, 139);
+  font-weight: bold;
 }
 .foot {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 2 3 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2 3 1rem;
 }
 footer ul {
-    padding: 0;
+  padding: 0;
 }
 
 /* hover 효과 */
 .head a:hover {
-    color: red;
-    transform: scale(1.1);
-    transition: all 0.2s;
+  color: red;
+  transform: scale(1.1);
+  transition: all 0.2s;
 }
 
 #search:focus {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 16px 11px 16px 12px;
-    transition: all 0.15s;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 16px 11px 16px 12px;
+  transition: all 0.15s;
 }
 
 footer a:hover {
-    color: rgb(58, 110, 255);
-    transition: color 0.2s;
+  color: rgb(58, 110, 255);
+  transition: color 0.2s;
 }
 
-.toptop button:hover, .mainlow button:hover {
-    transform: scale(1.3) translateY(0.5em);
-    transition: all 0.2s;
+.toptop button:hover,
+.mainlow button:hover {
+  transform: scale(1.3) translateY(0.5em);
+  transition: all 0.2s;
 }
 .left:hover {
-    color: rgb(159, 255, 231);
-    transform: scale(1.2);
-    transition: 0.3s;
-    transform: translateX(-0.2em);
+  color: rgb(159, 255, 231);
+  transform: scale(1.2);
+  transition: 0.3s;
+  transform: translateX(-0.2em);
 }
 .right:hover {
-    color: rgb(159, 255, 231);
-    transform: scale(1.2);
-    transition: 0.3s;
-    transform: translateX(0.2em);
+  color: rgb(159, 255, 231);
+  transform: scale(1.2);
+  transition: 0.3s;
+  transform: translateX(0.2em);
 }
-.nick:hover, .bmw:hover, .newsletter:hover, .mediterrane:hover, .knightbar:hover, .applewatch:hover, .berry:hover, .middle1:hover, .middle2:hover, .middle3:hover, .middle4:hover, .bike:hover, .glass:hover, .johnwick:hover, .interviews:hover, .nightcity:hover, .fans:hover, .follow:hover {
-    transform: scale(1.02);
+.nick:hover,
+.bmw:hover,
+.newsletter:hover,
+.mediterrane:hover,
+.knightbar:hover,
+.applewatch:hover,
+.berry:hover,
+.middle1:hover,
+.middle2:hover,
+.middle3:hover,
+.middle4:hover,
+.bike:hover,
+.glass:hover,
+.johnwick:hover,
+.interviews:hover,
+.nightcity:hover,
+.fans:hover,
+.follow:hover {
+  transform: scale(1.02);
 }
 .sidebar_content a:hover {
-    color: white;
+  color: white;
 }
 
+#image01:checked ~ .mainmiddle > .slidelist > .slideitems {
+  transform: translateX(0);
+}
+#image02:checked ~ .mainmiddle > .slidelist > .slideitems {
+  transform: translateX(-22.6rem);
+}
+#image03:checked ~ .mainmiddle > .slidelist > .slideitems {
+  transform: translateX(-45.2rem);
+}
+#image04:checked ~ .mainmiddle > .slidelist > .slideitems {
+  transform: translateX(-67.8rem);
+}
 
-    #image01:checked ~ .mainmiddle > .slidelist > .slideitems{
-        transform: translateX(0);
-    }
-    #image02:checked ~ .mainmiddle > .slidelist > .slideitems{
-        transform: translateX(-22.6rem);
-    }
-    #image03:checked ~ .mainmiddle > .slidelist > .slideitems{
-        transform: translateX(-45.2rem);
-    }
-    #image04:checked ~ .mainmiddle > .slidelist > .slideitems{
-        transform: translateX(-67.8rem);
-    }
-
-
-    #image01:checked ~ .mainmiddle > .slide-control > .control1 {
-        display: inline-block;
-    }
-    #image02:checked ~ .mainmiddle > .slide-control > .control2 {
-        display: inline-block;
-    }
-    #image03:checked ~ .mainmiddle > .slide-control > .control3 {
-        display: inline-block;
-    }
-    #image04:checked ~ .mainmiddle > .slide-control > .control4 {
-        display: inline-block;
-    }
+#image01:checked ~ .mainmiddle > .slide-control > .control1 {
+  display: inline-block;
+}
+#image02:checked ~ .mainmiddle > .slide-control > .control2 {
+  display: inline-block;
+}
+#image03:checked ~ .mainmiddle > .slide-control > .control3 {
+  display: inline-block;
+}
+#image04:checked ~ .mainmiddle > .slide-control > .control4 {
+  display: inline-block;
+}
