@@ -9,4 +9,6 @@ Behance 사이트에 있는 디자인대로 만들었다<br/>
 <br/><br/>
 
 <h3>결과</h3>
-<img width="379" alt="스크린샷 2024-01-26 224627" src="https://github.com/yeonguk0201/make_demo_site/assets/105638310/9531d2dd-72d9-4760-8f56-88ba9a42dfa9">
+<img width="374" alt="image" src="https://github.com/yeonguk0201/make_demo_site/assets/105638310/eea1646a-d1c0-411e-b6aa-f2a04f3320c5">
+
+<img width="1261" alt="image" src="https://github.com/yeonguk0201/make_demo_site/assets/105638310/b47e8c47-6257-42e9-9ccb-9873b73471e4">
